@@ -5,6 +5,7 @@ userInput = 'noExit'
 while userInput != 'exit':
 	#userCategory = input('Enter category first : ')
 	userKeyword = input('Enter keyword to search : ')
+	#different things different it lastt code
 	catergoryURL = 'Mobile-Phones-and-Gadgets-3020/'
 	frontMudahURL = 'https://www.mudah.my/malaysia/'
 	#middleMudahURL = userKeyword
