@@ -1,3 +1,4 @@
+#from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 import requests
 
@@ -14,6 +15,18 @@ class carousellScrapEngine:
 
 		#html parsing
 		page_soup = soup(page.text, "html.parser")
+
+# containers = page_soup.findAll("div",{"class":"row card-row"})
+# for container in containers:
+# 	brandname = container.findAll("h4",{"class":"ProductCard__cardTitleContent___LESPy"})
+# 	brandnamelist = brandname[0].text
+# 	brandprice = container.findAll("span",{"class":"ProductCard__cardPrice___1b7Lt"})
+# 	brandpricelist = brandprice[0].text
+# 	print("Brand : "+brandnamelist)
+# 	print("Price : "+brandpricelist)
+
+	# #jadi tapi tak sekali
+	#containers = page_soup.findAll("div",{"class":"row card-row"})
 		allCarousellProduct = []
 
 		gadgetname_h4 = page_soup.findAll("h4",{"class":"ProductCard__cardTitleContent___LESPy"})
@@ -25,7 +38,12 @@ class carousellScrapEngine:
 		gadgetprice_span = page_soup.findAll("span",{"class":"ProductCard__cardPrice___1b7Lt"})
 		for container in gadgetprice_span:
 			pricelist = container["title"]
-			#print(pricelist)
+			# print(pricelist)
 			allCarousellProduct.append(pricelist)
 
 		return allCarousellProduct
+# #for container in containers:
+# 	#gadgetname = page_soup.findAll("h4",{"class":"ProductCard__cardTitleContent___LESPy"})
+# 	#gadgetprice = container.findAll("span",{"class":"ProductCard__cardPrice___1b7Lt"})
+# 	#print(gadgetname)
+# 	#print(gadgetprice)

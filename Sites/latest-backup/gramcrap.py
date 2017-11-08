@@ -2,12 +2,14 @@
 from bs4 import BeautifulSoup as soup
 import requests
 
-my_url ='https://guardian.com.my/index.php/catalogsearch/result/?q=Tissue'
+my_url ='https://www.instagram.com/explore/tags/sayajual/'
 headers = {'User-Agent':'Mozilla/5.0'}
 page = requests.get(my_url)
 
 #html parsing
 page_soup = soup(page.text, "html.parser")
-tissue = page_soup.findAll("h2",{"class":"product-name"})
+instacontainers = page_soup.findAll("div",{"class":"_cmdpi"})
 
-print(tissue)
+for container in phonecontainers:
+	phonelist = container.text
+	print(phonelist)
